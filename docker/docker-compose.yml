@@ -1,0 +1,37 @@
+version: '3.5'
+services:
+        itoken-eureka-1:
+                image: 192.168.242.131:5000/itoken-eureka
+                restart: always
+                container_name: itoken-eureka-1
+                ports:
+                        - 8761:8761
+                networks: 
+                        - eureka-1-name
+
+        itoken-eureka-2:
+                image: 192.168.242.131:5000/itoken-eureka
+                restart: always
+                container_name: itoken-eureka-2
+                ports:
+                        - 8861:8761
+                networks:
+                        - eureka-2-name
+
+        itoken-eureka-3:
+                image: 192.168.242.131:5000/itoken-eureka
+                restart: always
+                container_name: itoken-eureka-3
+                ports:
+                        - 8961:8761
+                networks:
+                        - eureka-3-name
+
+networks:
+        eureka-1-name:
+                name: eureka-1
+        eureka-2-name:
+                name: eureka-2
+        eureka-3-name:
+                name: eureka-3
+
